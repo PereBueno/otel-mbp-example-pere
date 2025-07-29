@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Stage 0') {
             steps {
-                registerBuildArtifactMetadata(name:"artifact1", url:"https://bla", version:"1", type:"mock", digest:"0123456789abcdef", label:"test-artifact";)
+                registerBuildArtifactMetadata(name:"artifact1", url:"https://bla", version:"1", type:"mock", digest:"0123456789abcdef", label:"test-artifact");
                 echo 'Done with stage 0!'
             }
         }
