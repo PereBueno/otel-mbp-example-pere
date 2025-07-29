@@ -11,7 +11,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 echo 'Waiting a bit'
-                sh "sleep 10"
+                registerBuildArtifactMetadata(name:"artifact2", url:"https://bla/second", version:"1.1", type:"docker", digest:"0123456789abcdef", label:"test-artifact, second-try");
                 echo 'Done with stage 1'
             }
         }
