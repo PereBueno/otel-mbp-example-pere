@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Stage 0') {
             steps {
-                registerBuildArtifactMetadata(name:"artifact1", url:"https://bla", version:"1", type:"mock", digest:"0123456789abcdef", label:"test-artifact");
+                #registerBuildArtifactMetadata(name:"artifact1", url:"https://bla", version:"1", type:"mock", digest:"0123456789abcdef", label:"test-artifact");
                 echo 'Done with stage 0!'
             }
         }
         stage('Stage 1') {
             steps {
                 echo 'Not Waiting a bit'
-                registerBuildArtifactMetadata(name:"artifact2", url:"https://bla/second", version:"1.1", type:"docker", digest:"0123456789abcdef", label:"test-artifact, second-try");
+                #registerBuildArtifactMetadata(name:"artifact2", url:"https://bla/second", version:"1.1", type:"docker", digest:"0123456789abcdef", label:"test-artifact, second-try");
                 echo 'Done with stage 1'
             }
         }
