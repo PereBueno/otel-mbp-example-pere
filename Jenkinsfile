@@ -6,7 +6,7 @@ pipeline {
                 withMockLoad(averageDuration: 3, testFailureIgnore: false) {
                     sh MOCK_LOAD_COMMAND
                 }
-                junit 'test-results.xml'
+                junit 'mock-junit.xml'
             }
         }
         stage('1') {
