@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Stage-0') {
             steps {
-                junit 'test-results.xml'
                 withMockLoad(averageDuration: 3, testFailureIgnore: false) {
                     sh MOCK_LOAD_COMMAND
                 }
+                junit 'test-results.xml'
             }
         }
         stage('1') {
