@@ -4,6 +4,10 @@ pipeline {
     stages {
         stage('Stage 0') {
             steps {
+                sh "echo 'test-1' > scan.sarif"
+                sh "echo 'test-2' > scan.sarif.json"
+                sh "echo 'test-3' > scan.notsarif"
+                archiveArtifacts artifacts:"scan*"
                 registerBuildArtifactMetadata(name:"artifact1", url:"https://bla", version:"1", type:"mock", digest:"0123456789abcdef", label:"test-artifact");
                 echo 'Done with stage 0!'
             }
