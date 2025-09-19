@@ -23,6 +23,8 @@ pipeline {
             steps {
                 echo 'writing some junit test results'
                 sh "echo 'test-results' > junitResult.xml"
+                sh "echo 'test-results2' > junitResult.NOTxml"
+                archiveArtifacts artifacts:"junitResult.*"
                 echo 'Done with stage 2'
             }
         }
