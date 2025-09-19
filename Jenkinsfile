@@ -6,7 +6,7 @@ pipeline {
                 withMockLoad(averageDuration: 3, testFailureIgnore: false) {
                     sh MOCK_LOAD_COMMAND
                 }
-                junit 'stage-0.xml', allowEmptyResults: true
+                junit (testResults: '**/*.xml', allowEmptyResults: true)
             }
         }
         stage('1') {
