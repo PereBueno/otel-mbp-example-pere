@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Stage 2') {
             steps {
-                echo 'Waiting a bit'
-                sh "sleep 5"
+                echo 'writing some junit test results'
+                sh "echo 'test-results' > junitResult.xml"
                 echo 'Done with stage 2'
             }
         }
