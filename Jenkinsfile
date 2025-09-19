@@ -6,6 +6,7 @@ pipeline {
                 withMockLoad(averageDuration: 3, testFailureIgnore: false) {
                     sh MOCK_LOAD_COMMAND
                 }
+                junit 'stage-0-results.xml'
             }
         }
         stage('1') {
@@ -44,6 +45,7 @@ pipeline {
                 withMockLoad(averageDuration: 5, testFailureIgnore: false) {
                     sh MOCK_LOAD_COMMAND
                 }
+                junit 'stage-3-results.xml'
             }
         }
     }
