@@ -1,0 +1,14 @@
+pipeline {
+                agent any
+                stages {
+                    stage("Failing stage with catch") {
+                        steps {
+                            echo 'Exporting sonar report'
+                            catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                                error('Failing and marking as unstable')
+                            }
+                            echo 'Done'
+                        }
+                    }
+                }
+            }
