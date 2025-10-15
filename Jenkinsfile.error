@@ -4,7 +4,7 @@ pipeline {
                     stage("Failing stage with catch") {
                         steps {
                             echo 'Exporting sonar report'
-                            catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                            catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                                 error('Failing and marking as unstable')
                             }
                             echo 'Done'
